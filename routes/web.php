@@ -16,4 +16,20 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('welcome');
 });
+Route::get('/dashboard', function(){
 
+});
+
+Route::get('/login', function(){
+
+});
+Route::get('/register', function(){
+
+});
+
+Route::post('/login', function(){
+
+});
+Route::post('/register', function(){
+
+});
