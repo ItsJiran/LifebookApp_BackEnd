@@ -2,18 +2,143 @@
 /* ---------------------------------------- ROOT ------------------------------------------- */
 /* ========================================================================================= */
 :root{
+    --white:#ffffff;
+    --blue-1:#4269B2;
+    --blue-2:#4E87CA;
+    --blue-3:#7394D1;
+    --light-blue-1:#9BB2DE;
+    --light-blue-2:#EDF4FC;
+    --light-blue-3:#EEF1F5;
+    --light-blue-4:#C4CAD4;
+    --dark-blue-1:#6E798D;
+    --dark-blue-3:#94A0B8;
+    --blue-grad-1:linear-gradient(135deg, rgba(66,105,178,1) 0%, rgba(155,178,222,1) 100%);
+    --light-blue-grad-1:linear-gradient(324deg, rgba(237,244,252,1) 0%, rgba(255,255,255,1) 100%);
+}
+
+body{
+    font-family:'Poppins',Arial,sans-serif;
+    font-size:16px;
+    min-height:100%;
+    min-width:100%;
+}
+
+.btn{
 
 }
 
+.blue-1{
+    color:var(--blue-1);
+}
+.blue-2{
+    color:var(--blue-2);
+}
+.blue-3{
+    color:var(--blue-3);
+}
+.dark-blue-1{
+    color:var(--dark-blue-1);
+}
+.dark-blue-3{
+    color:var(--dark-blue-3);
+}
+.light-blue-1{
+    color:var(--light-blue-1);
+}
+
+
+/* FILTER */
+.filter-white{
+    filter:invert(99%)
+    sepia(1%)
+    saturate(2%)
+    hue-rotate(44deg)
+    brightness(100%)
+    contrast(100%);
+}
+.filter-blue-1{
+    filter:invert(42%)
+    sepia(7%)
+    saturate(4625%)
+    hue-rotate(181deg)
+    brightness(91%)
+    contrast(87%);
+}
+
+/* FLEX */
+.text-center{
+    text-align: center;
+}
+.flex-column{
+    display:flex;
+    flex-direction:column;
+}
+.flex, .flex-center, .flex-center-between{
+    display:flex;
+    flex-direction: row;
+}
+.flex-column{
+    display:flex;
+    flex-direction: column;
+}
+.flex-center, .flex-center-between{
+    align-items:center;
+}
+.flex-justify-center{
+    justify-content: center;
+}
+.flex-center-between, .flex-column-between{
+    justify-content: space-between;
+}
+
+/* FONT WEIGHT */
+.regular{
+    font-weight:500;
+}
+.medium{
+    font-weight:600;
+}
+.semibold{
+    font-weight:700;
+}
+.bold{
+    font-weight:800;
+}
+
+.head-1{
+
+}
+.head-2{
+
+}
+.head-3{
+
+}
+
+.label-1{
+    font-size:1rem;
+}
+.label-2{
+
+}
+.label-3{
+
+}
+
+.para-1{
+    font-size:1rem;
+}
+.para-2{
+
+}
+.para-3{
+
+}
 
 /* ========================================================================================= */
 /* -------------------------------------- DEFAULT -----------------------------------------*/
 /* ========================================================================================= */
 
-body{
-    font-family:'Poppins',Arial,sans-serif;
-    font-size:16px;
-}
 body.main-page{
 
 }
@@ -26,6 +151,13 @@ body.auth-page{
 /* ========================================================================================= */
 .auth-illus-wrapper{
     display:none;
-    visibility: collapse;
 }
+.auth-form-container{
+    min-height:100%;
+    height:fit-content;
+    width:-webkit-fill-available;
+    background-image:var(--light-blue-grad-1);
+    padding:10px 20px;
+}
+
 
