@@ -4,7 +4,7 @@
 
 @section('auth-form')
     <div class='auth-form-top'>
-
+        <i class='isax isax-book'></i>
         <h1>My Own Life Book Digital</h1>
         <p>Masukkan data untuk login</p>
     </div>

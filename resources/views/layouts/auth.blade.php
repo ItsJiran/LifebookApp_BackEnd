@@ -1,13 +1,14 @@
 <html>
     <head>
         <title>LifebookApp - @yield('title')</title>
+        <meta name='viewport' content='width=device-width, initial-scale=1.0'/>
 
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
         <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700;800&display=swap" rel="stylesheet">
 
-        <link rel='stylesheet' href='/public/assets/css/style.css'/>
-        <link rel='stylesheet' href='/public/library/iconsax/style.css'/>
+        <link rel='stylesheet' type='text/css' href='/public/library/iconsax/style.css'/>
+        <link rel='stylesheet' type='text/css' href='/public/assets/css/style.css'/>
     </head>
     <body class='auth-page'>
 
