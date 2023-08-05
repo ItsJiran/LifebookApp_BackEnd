@@ -19,6 +19,7 @@ class MaterialsController extends Controller
             'file' => ['required','mimes:pdf'],
         ]);
 
+        Storage::disk('public')
 
 
         exit();
