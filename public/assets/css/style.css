@@ -2,18 +2,20 @@
 /* ---------------------------------------- ROOT ------------------------------------------- */
 /* ========================================================================================= */
 :root{
-    --white:#ffffff;
+    --white-1:#ffffff;
     --blue-1:#4269B2;
     --blue-2:#4E87CA;
     --blue-3:#7394D1;
+    --blue-4:#7394D1;
     --yellow-1:#C3B854;
-    --light-blue-1:#9BB2DE;
+    --light-blue-1:#D5DFF1;
     --light-blue-2:#EDF4FC;
     --light-blue-3:#EEF1F5;
     --light-blue-4:#C4CAD4;
     --dark-blue-1:#5B6579;
     --dark-blue-2:#6E798D;
     --dark-blue-3:#94A0B8;
+    --dark-blue-4:#9CADCB;
     --blue-grad-1:linear-gradient(135deg, rgba(66,105,178,1) 0%, rgba(155,178,222,1) 100%);
     --light-blue-grad-1:linear-gradient(324deg, rgba(237,244,252,1) 0%, rgba(255,255,255,1) 100%);
     --shadow-1:0px 3px 13px 0px rgba(209, 218, 235, 0.50);
@@ -59,6 +61,16 @@ body{
     background-color:var(--blue-3);
 }
 
+.bg-light-blue-1{
+    background-color:var(--light-blue-1);
+}
+.bg-light-blue-2{
+    background-color:var(--light-blue-2);
+}
+.bg-light-blue-3{
+    background-color:var(--light-blue-3);
+}
+
 .bg-dark-blue-1{
     background-color:var(--dark-blue-1);
 }
@@ -68,9 +80,12 @@ body{
 .bg-dark-blue-3{
     background-color:var(--dark-blue-3);
 }
+.bg-dark-blue-4{
+    background-color:var(--dark-blue-4);
+}
 
 .white-1{
-    color:var(--white);
+    color:var(--white-1);
 }
 
 .blue-1{
@@ -91,19 +106,27 @@ body{
 .dark-blue-3{
     color:var(--dark-blue-3);
 }
+.dark-blue-4{
+    color:var(--dark-blue-4);
+}
 .light-blue-1{
     color:var(--light-blue-1);
 }
-
+.light-blue-2{
+    color:var(--light-blue-2);
+}
+.light-blue-3{
+    color:var(--light-blue-3);
+}
 
 /* FILTER */
-.filter-white{
-    filter:invert(99%)
-    sepia(1%)
-    saturate(2%)
-    hue-rotate(44deg)
-    brightness(100%)
-    contrast(100%);
+.filter-white-1{
+    filter:invert(100%)
+    sepia(96%)
+    saturate(15%)
+    hue-rotate(224deg)
+    brightness(104%)
+    contrast(104%);
 }
 .filter-blue-1{
     filter:invert(42%)
@@ -122,11 +145,11 @@ body{
     contrast(89%);
 }
 .filter-blue-3{
-    filter:invert(74%)
-    sepia(20%)
-    saturate(5304%)
-    hue-rotate(189deg)
-    brightness(86%)
+    filter:invert(58%)
+    sepia(30%)
+    saturate(618%)
+    hue-rotate(180deg)
+    brightness(94%)
     contrast(88%);
 }
 .filter-yellow-1{
@@ -250,12 +273,18 @@ body{
     font-size:0.937em;
 }
 .para-3{
-    font-size:0.8125em;
+    font-size:0.875em;
 }
 .para-4{
-    font-size:0.725em;
+    font-size:0.8125em;
 }
 .para-5{
+    font-size:0.75em;
+}
+.para-5{
+    font-size:0.6875em;
+}
+.para-6{
 
     font-size:0.625em;
 }
@@ -318,7 +347,7 @@ body.auth-page{
 .layout-main-header{
     gap:20px;
     padding:17px;
-    padding-top:35px;
+    padding-top:20px;
 }
 .layout-main-content{
     padding:0px 17px;
@@ -327,10 +356,33 @@ body.auth-page{
     overflow:auto;
 }
 .layout-nav{
-    height:60px;
-    background-color:var(--white);
+    background-color:var(--white-1);
+    color:var(--blue-grad-1);
+    padding:10px 20px;
 }
 
+.nav-menu-container{
+    width:80%;
+    gap:20px;
+    margin:0px auto;
+}
+.nav-menu{
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    gap:5px;
+}
+.nav-menu .icon-container{
+    padding:4px;
+    border-radius:100%;
+}
+.nav-menu .svg-icon{
+    height:20px;
+    width:20px;
+}
+.nav-menu.active .icon-container{
+    background-image:var(--blue-grad-1);
+}
 
 /* ========================================================================================= */
 /* ------------------------------------ HOME PAGE ------------------------------------------ */
@@ -350,6 +402,7 @@ body.auth-page{
 
 .page-hero{
     height:150px;
+    min-height:150px;
     padding:20px;
     margin-bottom:20px;
     background-image:var(--blue-grad-1);
@@ -359,28 +412,43 @@ body.auth-page{
 }
 
 .journals-container{
+    padding:5px;
+}
+.journals-container{
     display:flex;
     flex-direction:column;
+    flex:1;
+    flex-grow:1;
+    overflow:auto;
 }
 .journals-header{
     margin:0px 10px;
     margin-bottom:10px;
-    flex:1;
 }
 .journals-list{
     overflow:auto;
     flex:1;
     flex-grow:1;
+    gap:15px;
 }
 
 .journal-container{
-    gap:10px;
+    padding:10px;
+    gap:15px;
 }
 .journal-photo{
     height:55px;
     width:55px;
 }
+.journal-photo .svg-icon{
+    height:35px;
+    width:35px;
+}
 .journal-info{
 
 }
+.journal-info h2{
+    margin-bottom:5px;
+}
+
 

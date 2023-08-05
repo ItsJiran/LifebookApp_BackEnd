@@ -14,13 +14,15 @@
 
         <div class='layout-main'>
             @yield('layout-main-header')
-            <div class='layout-main-content'>
-            @yield('layout-main-content')
+            <div class='layout-main-content flex-column'>
+                @yield('layout-main-content')
             </div>
         </div>
 
-        <div class='layout-nav shadow-2'>
-            @yield('layout-nav-content')
+        <div class='layout-nav flex-center-between shadow-2'>
+            <div class='nav-menu-container flex-center-between'>
+                @yield('nav-menu-content')
+            </div>
         </div>
 
     </body>

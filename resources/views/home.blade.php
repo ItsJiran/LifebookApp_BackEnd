@@ -23,19 +23,38 @@
         </div>
         <ul class='journals-list flex-column'>
             <li class='journal-container border-rounded-1 bg-white-1 shadow-1 flex-center'>
-                <a class='journal-photo bg-dark-blue-2 border-rounded-1'>
-                    <img src='./public/library/iconsax/bold/book-1.svg' class='svg-icon filter-blue-2'/>
+                <a class='journal-photo bg-light-blue-1 flex-center flex-justify-center border-rounded-1'>
+                    <img src='./public/library/iconsax/bold/book-1.svg' class='svg-icon filter-blue-3'/>
                 </a>
                 <div class='journal-info dark-blue-2'>
-                    <a href='#'><h2 class='para-3 semibold' >Jurnal Semester 2</h2></a>
-                    <p class='para-4'>2023-08-01</p>
+                    <a href='#'><h2 class='para-3 dark-blue-2 semibold' >Jurnal Semester 2</h2></a>
+                    <p class='para-6'>2023-08-01</p>
                 </div>
             </li>
+            <h2 class='para-3 dark-blue-4 semibold flex-center' style='margin:0px auto; margin-top:20px;' >End Content</h2>
         </ul>
     </div>
+
 @endsection
 
-@section('layout-nav-content')
-
+@section('nav-menu-content')
+    <a href='/home' class='nav-menu active'>
+        <div class='icon-container'>
+            <img class='svg-icon filter-white-1' src='./public/library/iconsax/outline/home-1.svg'/>
+        </div>
+        <label class='para-6 regular blue-2'>Home</label>
+    </a>
+    <a href='/journal' class='nav-menu'>
+        <div class='icon-container'>
+        <img class='svg-icon filter-blue-2' src='./public/library/iconsax/outline/book.svg'/>
+        </div>
+        <label class='para-6 regular blue-2'>Journal</label>
+    </a>
+    <a href='/settings' class='nav-menu'>
+        <div class='icon-container'>
+        <img class='svg-icon filter-blue-2' src='./public/library/iconsax/outline/setting-2.svg'/>
+        </div>
+        <label class='para-6 regular blue-2'>Settings</label>
+    </a>
 @endsection
 
