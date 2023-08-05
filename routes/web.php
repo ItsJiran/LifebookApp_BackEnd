@@ -10,12 +10,11 @@ use App\Http\Controllers\AuthController;
 |--------------------------------------------------------------------------
 | Web Routes
 |--------------------------------------------------------------------------
-*/
+ */
 
-
-Route::redirect('/', '/dashboard');
-Route::get('/dashboard', function(){
-    return view('welcome');
+Route::middleware('auth')->group(function(){
+    Route::redirect('/', '/home');
+    Route::get('/home', function(){ return view('home'); })->name('home');
 });
 
 
@@ -25,17 +24,5 @@ Route::get('/dashboard', function(){
 |--------------------------------------------------------------------------
 */
 
+require __DIR__ . '/auth.php';
 
-Route::get('/login', function(){
-    return view('login');
-});
-Route::get('/register', function(){
-    return view('register');
-});
-
-Route::post('/login', function(){
-
-});
-Route::post('/register', function(){
-
-});

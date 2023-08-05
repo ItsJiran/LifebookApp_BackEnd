@@ -6,25 +6,71 @@
     --blue-1:#4269B2;
     --blue-2:#4E87CA;
     --blue-3:#7394D1;
+    --yellow-1:#C3B854;
     --light-blue-1:#9BB2DE;
     --light-blue-2:#EDF4FC;
     --light-blue-3:#EEF1F5;
     --light-blue-4:#C4CAD4;
-    --dark-blue-1:#6E798D;
+    --dark-blue-1:#5B6579;
+    --dark-blue-2:#6E798D;
     --dark-blue-3:#94A0B8;
     --blue-grad-1:linear-gradient(135deg, rgba(66,105,178,1) 0%, rgba(155,178,222,1) 100%);
     --light-blue-grad-1:linear-gradient(324deg, rgba(237,244,252,1) 0%, rgba(255,255,255,1) 100%);
+    --shadow-1:0px 3px 13px 0px rgba(209, 218, 235, 0.50);
+    --shadow-2:0px -3px 13px 0px rgba(209, 218, 235, 0.50);
 }
 
+*{
+    box-sizing:border-box;
+}
+a{
+    text-decoration:none;
+}
 body{
     font-family:'Poppins',Arial,sans-serif;
     font-size:16px;
+    letter-spacing:1px;
     min-height:100%;
     min-width:100%;
 }
 
 .btn{
 
+}
+
+.shadow-1{
+    box-shadow:var(--shadow-1);
+}
+.shadow-2{
+    box-shadow:var(--shadow-2);
+}
+
+.bg-white-1{
+    background-color:var(--white-1);
+}
+
+.bg-blue-1{
+    background-color:var(--blue-1);
+}
+.bg-blue-2{
+    background-color:var(--blue-2);
+}
+.bg-blue-3{
+    background-color:var(--blue-3);
+}
+
+.bg-dark-blue-1{
+    background-color:var(--dark-blue-1);
+}
+.bg-dark-blue-2{
+    background-color:var(--dark-blue-2);
+}
+.bg-dark-blue-3{
+    background-color:var(--dark-blue-3);
+}
+
+.white-1{
+    color:var(--white);
 }
 
 .blue-1{
@@ -38,6 +84,9 @@ body{
 }
 .dark-blue-1{
     color:var(--dark-blue-1);
+}
+.dark-blue-2{
+    color:var(--dark-blue-2);
 }
 .dark-blue-3{
     color:var(--dark-blue-3);
@@ -63,6 +112,54 @@ body{
     hue-rotate(181deg)
     brightness(91%)
     contrast(87%);
+}
+.filter-blue-2{
+    filter:invert(49%)
+    sepia(82%)
+    saturate(357%)
+    hue-rotate(172deg)
+    brightness(88%)
+    contrast(89%);
+}
+.filter-blue-3{
+    filter:invert(74%)
+    sepia(20%)
+    saturate(5304%)
+    hue-rotate(189deg)
+    brightness(86%)
+    contrast(88%);
+}
+.filter-yellow-1{
+    filter:invert(65%)
+    sepia(91%)
+    saturate(238%)
+    hue-rotate(16deg)
+    brightness(91%)
+    contrast(94%);
+}
+.filter-dark-blue-1{
+    filter:invert(38%)
+    sepia(30%)
+    saturate(338%)
+    hue-rotate(182deg)
+    brightness(92%)
+    contrast(87%);
+}
+.filter-dark-blue-2{
+    filter:invert(50%)
+    sepia(8%)
+    saturate(885%)
+    hue-rotate(180deg)
+    brightness(91%)
+    contrast(90%);
+}
+.filter-dark-blue-3{
+    filter:invert(73%)
+    sepia(7%)
+    saturate(925%)
+    hue-rotate(182deg)
+    brightness(88%)
+    contrast(84%);
 }
 
 /* FLEX */
@@ -93,54 +190,94 @@ body{
 
 /* FONT WEIGHT */
 .regular{
-    font-weight:500;
+    font-weight:400;
 }
 .medium{
-    font-weight:600;
+    font-weight:500;
 }
 .semibold{
-    font-weight:700;
+    font-weight:600;
 }
 .bold{
+    font-weight:700;
+}
+.extrabold{
     font-weight:800;
 }
 
+/* FONT SIZING */
+.head-1, .head-2, .head-3{
+    line-height:22px;
+}
 .head-1{
-
+    font-size:1.3em;
 }
 .head-2{
-
+    font-size:1.2em;
 }
 .head-3{
-
+    font-size:1.1em;
 }
 
+.label-1, .label-2, .label-3, .label-4, .label-5{
+    display:block;
+    margin-bottom:5px;
+}
 .label-1{
-    font-size:1rem;
+    font-size:1em;
 }
 .label-2{
-
+    font-size:0.937em;
 }
 .label-3{
+    font-size:0.8125em;
+}
+.label-4{
+    font-size:0.725em;
+}
+.label-5{
 
+    font-size:0.625em;
 }
 
+.para-1, .para-2, .para-3, .para-4, .para-5{
+
+}
 .para-1{
-    font-size:1rem;
+    font-size:1em;
 }
 .para-2{
-
+    font-size:0.937em;
 }
 .para-3{
+    font-size:0.8125em;
+}
+.para-4{
+    font-size:0.725em;
+}
+.para-5{
 
+    font-size:0.625em;
+}
+
+.container{
+
+}
+
+.svg-icon{
+    height:1.2em;
+    width:1.2em;
+}
+.border-rounded-1{
+    border-radius:5px;
 }
 
 /* ========================================================================================= */
 /* -------------------------------------- DEFAULT -----------------------------------------*/
 /* ========================================================================================= */
-
-body.main-page{
-
+body.home-page{
+    display:flex;
+    flex-direction:column;
 }
 body.auth-page{
     display:flex;
@@ -159,5 +296,91 @@ body.auth-page{
     background-image:var(--light-blue-grad-1);
     padding:10px 20px;
 }
+.auth-form{
+    display:flex;
+    flex-direction:column;
+    gap:20px;
+}
+.auth-form input{
+}
 
+/* ========================================================================================= */
+/* ------------------------------------ LAYOUT PAGE ------------------------------------------ */
+/* ========================================================================================= */
+.layout-main{
+    display:flex;
+    flex-direction:column;
+    flex:1;
+    flex-grow:1;
+    overflow:auto;
+    background-image:var(--light-blue-grad-1);
+}
+.layout-main-header{
+    gap:20px;
+    padding:17px;
+    padding-top:35px;
+}
+.layout-main-content{
+    padding:0px 17px;
+    flex:1;
+    flex-grow:1;
+    overflow:auto;
+}
+.layout-nav{
+    height:60px;
+    background-color:var(--white);
+}
+
+
+/* ========================================================================================= */
+/* ------------------------------------ HOME PAGE ------------------------------------------ */
+/* ========================================================================================= */
+.page-info{
+    gap:5px;
+}
+.page-info label{
+    position:relative;
+    font-size:1.2em;
+    top:0px;
+}
+.page-info img{
+    height:1.4em;
+    width:1.4em;
+}
+
+.page-hero{
+    height:150px;
+    padding:20px;
+    margin-bottom:20px;
+    background-image:var(--blue-grad-1);
+}
+.page-hero-head-1{
+    width:calc(100% - 50px);
+}
+
+.journals-container{
+    display:flex;
+    flex-direction:column;
+}
+.journals-header{
+    margin:0px 10px;
+    margin-bottom:10px;
+    flex:1;
+}
+.journals-list{
+    overflow:auto;
+    flex:1;
+    flex-grow:1;
+}
+
+.journal-container{
+    gap:10px;
+}
+.journal-photo{
+    height:55px;
+    width:55px;
+}
+.journal-info{
+
+}
 
