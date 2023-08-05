@@ -1,10 +1,4 @@
-@extends('layouts.app')
+@extends('layouts.journal')
 
-@section('title','Journal')
-
-@section('layout-main-header')
+@section('layout-main-content')
 @endsection
-
-@section('layout-nav-content')
-@endsection
-

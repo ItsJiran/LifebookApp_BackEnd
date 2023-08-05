@@ -14,7 +14,7 @@ use Illuminate\Support\Facades\Auth;
 class AuthController extends Controller{
 
     public function view(){
-        return view('login');
+        return view('auth.login');
     }
 
     public function store(Request $request){

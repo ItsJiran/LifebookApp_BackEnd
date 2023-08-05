@@ -6,7 +6,7 @@
     <div class='layout-main-header flex-center semibold flex-justify-center'>
         <div class='page-info center flex-center'>
             <img class='svg-icon filter-blue-2' src='/public/library/iconsax/bold/book.svg' />
-            <label class='blue-2'>Home</label>
+            <label class='blue-2'>Journal</label>
         </div>
     </div>
 @endsection
@@ -18,7 +18,7 @@
         </div>
         <label class='para-6 regular blue-2'>Home</label>
     </a>
-    <a href='/journal' class='nav-menu'>
+    <a href='/journal' class='nav-menu active'>
         <div class='icon-container'>
             <img class='svg-icon' src='/public/library/iconsax/outline/book.svg'/>
         </div>
