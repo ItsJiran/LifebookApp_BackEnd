@@ -14,9 +14,7 @@
 
         <div class='layout-main'>
             @yield('layout-main-header')
-            <div class='layout-main-content flex-column'>
-                @yield('layout-main-content')
-            </div>
+            @yield('layout-main-content')
         </div>
 
         <div class='layout-nav flex-center-between shadow-2'>

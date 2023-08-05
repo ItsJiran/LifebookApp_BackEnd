@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Auth;
 
 use App\Http\Controllers\Controller;
+use App\Models\User;
 
 use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
@@ -23,7 +24,12 @@ class AuthController extends Controller{
         ]);
 
         if(Auth::attempt($credentials)){
+            $user = User::where('email',$request->email)->first();
+
             $request->session()->regenerate();
+            $request->session()->put('user_id',$user->id);
+            $request->session()->put('role',$user->role);
+
             return redirect('home');
         }
 

@@ -35,8 +35,9 @@ class RegisterController extends Controller
         ]);
 
         Auth::login($user);
-
-        return redirect('dashboard');
+        $request->session()->put('user_id',$user->id);
+        $request->session()->put('role',$user->role);
+        return redirect('home');
     }
 
 }

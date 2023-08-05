@@ -22,7 +22,7 @@
 
         <div class='auth-form-container flex-column flex-justify-center'>
             <div class='auth-form-top text-center'>
-                <img class='svg-icon filter-blue-1' src='./public/library/iconsax/bold/book-1.svg' />
+                <img class='svg-icon filter-blue-1' src='/public/library/iconsax/bold/book-1.svg' />
                 <h1 class='head-1 blue-1 semibold'>My Own Life Book Digital</h1>
                 <p>Masukkan data anda untuk masuk ke dalam aplikasi</p>
             </div>
