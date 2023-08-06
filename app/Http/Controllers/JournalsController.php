@@ -7,7 +7,7 @@ use Illuminate\Http\Response;
 use Illuminate\Support\Facades\File;
 use Illuminate\Support\Facades\Storage;
 
-use App\Models\Journalss;
+use App\Models\Journals;
 
 class JournalsController extends Controller
 {
@@ -19,11 +19,13 @@ class JournalsController extends Controller
     public function post(Request $request){
         return redirect('home');
     }
+    public function update(Request $request){
+        return redirect('home');
+    }
 
     public function create(Request $request){
         return view('journal_add');
     }
-
     public function edit(Request $request){
         return view('journal_edit');
     }
