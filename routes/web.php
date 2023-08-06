@@ -8,6 +8,7 @@ use App\Http\Controllers\EditorController;
 use App\Http\Controllers\FileController;
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\MaterialsController;
+use App\Http\Controllers\JournalsController;
 
 use App\Http\Helper\BasicDataHelper;
 
@@ -30,26 +31,43 @@ Route::middleware('auth')->group(function(){
     })->name('home');
 
     Route::get('/journal', function(Request $request){
-        return view('journal');
+        $user = BasicDataHelper::getUserData($request);
+
+        return view('journal', compact('user'));
     })->name('journal');
 
     Route::get('/settings', function(Request $request){
         return view('settings');
     })->name('settings');
-
-    Route::get('/view/materials/{id}', [MaterialsController::class,'view'])->name('materials.view');
 });
 
+Route::post('refresh-csrf',function(){
+    return csrf_token();
+});
+Route::post('test-csrf',function(){
+    return 'Token must have been valid';
+});
+
+/*
+|--------------------------------------------------------------------------
+| View
+|--------------------------------------------------------------------------
+*/
+Route::middleware('auth')->group(function(){
+    Route::get('/view/materials/{id}', [MaterialsController::class,'view'])->name('materials.view');
+    Route::get('/create/journals', [JournalsController::class, 'create'])->name('journals.create');
+});
+
+/*
+|--------------------------------------------------------------------------
+| Middleware Files
+|--------------------------------------------------------------------------
+*/
 Route::middleware([RedirectIfNotAdmin::class])->group(function(){
     Route::get('/create/materials', [MaterialsController::class, 'create'])->name('materials.create');
     Route::post('/post/materials', [MaterialsController::class,'post'])->name('materials.post');
 });
 
-/*
-|--------------------------------------------------------------------------
-| Displaying Files
-|--------------------------------------------------------------------------
-*/
 
 require __DIR__ . '/auth.php';
 

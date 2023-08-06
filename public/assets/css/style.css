@@ -344,8 +344,8 @@ body{
 }
 
 .svg-icon{
-    height:1.2em;
-    width:1.2em;
+    height:1.7em;
+    width:1.7em;
 }
 .border-rounded-1{
     border-radius:5px;
@@ -514,6 +514,27 @@ body.auth-page{
 }
 .material-info h2{
     margin-bottom:5px;
+}
+
+.journals-container{
+    padding:5px;
+}
+.journals-container{
+    display:flex;
+    flex-direction:column;
+    flex:1;
+    flex-grow:1;
+    overflow:auto;
+}
+.journals-header{
+    margin:0px 10px;
+    margin-bottom:10px;
+}
+.journals-list{
+    overflow:auto;
+    flex:1;
+    flex-grow:1;
+    gap:15px;
 }
 
 

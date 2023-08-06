@@ -9,6 +9,9 @@
 
         <link rel='stylesheet' type='text/css' href='/public/assets/css/reset.css'/>
         <link rel='stylesheet' type='text/css' href='/public/assets/css/style.css?v={{ time() }}'/>
+
+        <meta name='csrf-token' content=''/>
+        @yield('head-content')
     </head>
     <body class='home-page'>
 
@@ -23,5 +26,7 @@
             </div>
         </div>
 
+
+        @yield('footer-script-content')
     </body>
 </html>

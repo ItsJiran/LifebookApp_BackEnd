@@ -8,7 +8,7 @@
         </div>
         <div class='materials-container'>
             <div class='materials-header flex-center-between'>
-                <label class='label-2 semibold blue-3'>Daftar Jurnal</label>
+                <label class='label-2 semibold blue-3'>Daftar Materi</label>
                 @if($user['role'] == 'admin')
                     <a href='/create/materials'> <img class='filter-yellow-1' src='/public/library/iconsax/bold/add-square.svg' /> </a>
                 @endif
