@@ -17,7 +17,7 @@
                             <a href='/edit/journals/{{ $journal->id }}' class='material-photo bg-light-blue-1 flex-center flex-justify-center border-rounded-1'>
                                 <img src='/public/library/iconsax/bold/book-1.svg' class='svg-icon filter-blue-3'/>
                             </a>
-                            <div class='material-info dark-blue-2'>
+                            <div style='flex:1;' class='material-info flex-center-between dark-blue-2'>
                                 <div>
                                     <a href='/edit/journals/{{ $journal->id }}'><h2 class='para-3 dark-blue-2 semibold' >{{ $journal->title }}</h2></a>
                                     <p class='para-6'>{{ $journal->date }}</p>
