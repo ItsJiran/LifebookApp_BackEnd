@@ -15,15 +15,16 @@
         @yield('head-content')
     </head>
     <body class='home-page'>
+        <div class='layout-wrapper'>
+            <div class='layout-main'>
+                @yield('layout-main-header')
+                @yield('layout-main-content')
+            </div>
 
-        <div class='layout-main'>
-            @yield('layout-main-header')
-            @yield('layout-main-content')
-        </div>
-
-        <div class='layout-nav flex-center-between shadow-2'>
-            <div class='nav-menu-container flex-center-between'>
-                @yield('nav-menu-content')
+            <div class='layout-nav flex-center-between shadow-2'>
+                <div class='nav-menu-container flex-center-between'>
+                    @yield('nav-menu-content')
+                </div>
             </div>
         </div>
 
