@@ -3,6 +3,7 @@
 @section('layout-main-content')
     <div class='layout-main-content flex-column'>
         <div class='page-hero border-rounded-1 white-1'>
+            <img class='ilus-home-1' src='/public/assets/images/ilus-home-1.png'/>
             <h1 class='page-hero-head-1 head-4 bold'>My Own Life Book Digital</h1>
         </div>
         <div class='journals-container'>

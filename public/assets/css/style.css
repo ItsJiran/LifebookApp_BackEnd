@@ -541,14 +541,23 @@ body.auth-page .layout-wrapper{
 }
 
 .page-hero{
+    position:relative;
     height:150px;
     min-height:150px;
     padding:20px;
     margin-bottom:10px;
     background-image:var(--blue-grad-1);
+    overflow:hidden;
 }
 .page-hero-head-1{
     width:calc(100% - 50px);
+}
+
+.ilus-home-1{
+    width:200px;
+    position:absolute;
+    right:-20px;
+    bottom:-40px;
 }
 
 .materials-container{
