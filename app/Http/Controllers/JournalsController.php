@@ -67,6 +67,6 @@ class JournalsController extends Controller
             return redirect('home');
 
         $journal->delete();
-        return redirect('home');
+        return redirect('/journal');
     }
 }

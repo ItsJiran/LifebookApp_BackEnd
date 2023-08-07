@@ -22,7 +22,7 @@
                                     <a href='/edit/journals/{{ $journal->id }}'><h2 class='para-3 dark-blue-2 semibold' >{{ $journal->title }}</h2></a>
                                     <p class='para-6'>{{ $journal->date }}</p>
                                 </div>
-                                <a href='/edit/journals/{{ $journal->id }}'><img src='/public/library/iconsax/bold/book-1.svg' class='svg-icon filter-blue-3' src='/delete/journals/{{$journal->id}}'/></a>
+                                <a href='javascript:confirmSwitchPage("/delete/journals/{{ $journal->id }}","Yakin ingin menghapus?")'><img src='/public/library/iconsax/bold/close-circle.svg' class='svg-icon filter-red-1' src='/delete/journals/{{$journal->id}}'/></a>
                             </div>
                         </li>
                     @endforeach
