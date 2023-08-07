@@ -3,8 +3,8 @@
 @section('layout-main-content')
     <div class='layout-main-content flex-column'>
         <div class='page-hero border-rounded-1 white-1'>
-            <label class='label-5 medium'>Selamat Datang Di</label>
-            <h1 class='page-hero-head-1 head-2 bold'>My Own Life Book Digital</h1>
+            <label class='label-5 medium mb-5'>Selamat Datang Di</label>
+            <h1 class='page-hero-head-1 head-4 bold'>My Own Life Book Digital</h1>
         </div>
         <div class='materials-container'>
             <div class='materials-header flex-center-between'>

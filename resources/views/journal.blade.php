@@ -3,7 +3,7 @@
 @section('layout-main-content')
     <div class='layout-main-content flex-column'>
         <div class='page-hero border-rounded-1 white-1'>
-            <h1 class='page-hero-head-1 head-2 bold'>My Own Life Book Digital</h1>
+            <h1 class='page-hero-head-1 head-4 bold'>My Own Life Book Digital</h1>
         </div>
         <div class='journals-container'>
             <div class='journals-header flex-center-between'>

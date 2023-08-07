@@ -37,7 +37,7 @@ body{
     min-width:100%;
 }
 
-.btn{
+.btn, .btn-2{
     background-image:var(--blue-grad-1);
     color:var(--white-1);
     padding:10px 30px;
@@ -80,7 +80,7 @@ body{
    border:1px solid var(--light-blue-1);
 }
 .input-2{
-   height:45px;
+   height:50px;
    width:100%;
    padding:5px 10px;
    border:1px solid var(--light-blue-4);
@@ -146,6 +146,10 @@ body{
 
 .white-1{
     color:var(--white-1);
+}
+
+.red-1{
+    color:var(--red-1);
 }
 
 .blue-1{
@@ -301,17 +305,27 @@ body{
 
 /* FONT SIZING */
 .head-1, .head-2, .head-3{
+    line-height:30px;
+}
+.head-4, .head-5, .head-6{
     line-height:22px;
 }
 .head-1{
-    font-size:1.5em;
+    font-size:1.8em;
 }
 .head-2{
-    font-size:1.4em;
+    font-size:1.7em;
 }
 .head-3{
-    font-size:1.2em;
+    font-size:1.6em;
 }
+.head-4{
+    font-size:1.5em;
+}
+.head-5{
+    font-size:1.4em;
+}
+
 
 h1,h2,h3,h4,h5,h6{
     font-weight:600;
@@ -432,10 +446,16 @@ body.auth-page .layout-wrapper{
     display:flex;
     flex-direction:column;
     gap:20px;
-    padding:20px;
+    padding:35px 20px;
     margin:0px 10px;
 }
-.auth-form input{
+.auth-form-top{
+    margin:0px 20px;
+    margin-bottom:30px;
+}
+.auth-form-top .logo{
+    height:60px;
+    width:60px;
 }
 
 /* ========================================================================================= */
