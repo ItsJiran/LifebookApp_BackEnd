@@ -8,26 +8,24 @@ return new class extends Migration
 {
     /**
      * Run the migrations.
-     *
-     * @return void
      */
-    public function up()
+    public function up(): void
     {
-        Schema::create('pdf_data', function (Blueprint $table) {
+        Schema::create('apitoken', function (Blueprint $table) {
             $table->id();
-            $table->bigInteger('pdf_id');
             $table->bigInteger('user_id');
-            $table->longText('input_json')->default('{}');
+            $table->string('token', 64)->unique();
+            $table->timestamp('last_at')->nullable();
+            $table->timestamp('expired_at')->nullable();
+            $table->timestamps();
         });
     }
 
     /**
      * Reverse the migrations.
-     *
-     * @return void
      */
-    public function down()
+    public function down(): void
     {
-        Schema::dropIfExists('pdf_data');
+        Schema::dropIfExists('apitoken');
     }
 };

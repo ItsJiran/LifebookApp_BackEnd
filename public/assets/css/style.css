@@ -45,6 +45,7 @@ body{
     border:none;
     outline:none;
     letter-spacing:2px;
+    cursor:pointer;
 }
 .btn-center{
     margin:0px auto;
@@ -295,6 +296,28 @@ body{
     font-size:1.2em;
 }
 
+h1,h2,h3,h4,h5,h6{
+    font-weight:600;
+}
+h1{
+    font-size:1.6em;
+}
+h2{
+    font-size:1.5em;
+}
+h3{
+    font-size:1.4em;
+}
+h4{
+    font-size:1.3em;
+}
+h5{
+    font-size:1.2em;
+}
+h6{
+    font-size:1.15em;
+}
+
 .label-1, .label-2, .label-3, .label-4, .label-5{
     display:block;
 }
@@ -469,7 +492,7 @@ body.auth-page{
     height:150px;
     min-height:150px;
     padding:20px;
-    margin-bottom:20px;
+    margin-bottom:10px;
     background-image:var(--blue-grad-1);
 }
 .page-hero-head-1{
@@ -535,6 +558,12 @@ body.auth-page{
     flex:1;
     flex-grow:1;
     gap:15px;
+}
+
+.journal-editor{
+    padding:10px;
+    margin-top:10px;
+    border-top:1px solid var(--light-blue-1);
 }
 
 

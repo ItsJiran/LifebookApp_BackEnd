@@ -26,18 +26,18 @@ Route::middleware('auth')->group(function(){
     Route::get('/home', function(Request $request){
         $user = BasicDataHelper::getUserData($request);
         $materials = BasicDataHelper::getMaterialsData($request);
-
         return view('home', compact('user','materials'));
     })->name('home');
 
     Route::get('/journal', function(Request $request){
         $user = BasicDataHelper::getUserData($request);
-
-        return view('journal', compact('user'));
+        $journals = BasicDataHelper::getJournalsData($request);
+        return view('journal', compact('user','journals'));
     })->name('journal');
 
     Route::get('/settings', function(Request $request){
-        return view('settings');
+        $user = BasicDataHelper::getUserData($request);
+        return view('settings',compact('user','journals'));
     })->name('settings');
 });
 
@@ -55,7 +55,13 @@ Route::post('test-csrf',function(){
 */
 Route::middleware('auth')->group(function(){
     Route::get('/view/materials/{id}', [MaterialsController::class,'view'])->name('materials.view');
+
     Route::get('/create/journals', [JournalsController::class, 'create'])->name('journals.create');
+    Route::get('/edit/journals/{id}', [JournalsController::class, 'edit'])->name('journals.edit');
+
+    Route::post('/post/journals', [JournalsController::class, 'post'])->name('journals.post');
+    Route::put('/put/journals', [JournalsController::class,'update'])->name('journals.update');
+    Route::get('/delete/journals/{id}', [JournalsController::class,'delete'])->name('journals.delete');
 });
 
 /*

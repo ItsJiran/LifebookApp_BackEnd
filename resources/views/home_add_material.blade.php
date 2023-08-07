@@ -5,10 +5,10 @@
 @section('layout-main-content')
     <div class='layout-main-content flex-column bg-white-1'>
         <label class='input-label-1 label-4 semibold text-center mb-15'>Tambah Materi Menjurnal</label>
-        <form class='form-1' method='POST' enctype='multipart/form-data' action='/post/materials'>
+        <form class='form-1 prevent-multiple-submit' method='POST' enctype='multipart/form-data' action='/post/materials'>
             @csrf
             <div class='input-container'>
-                <label class='input-label-2 label-5 medium mb-5'>File Title</label>
+                <label class='input-label-2 label-5 medium mb-5'>Journal Title</label>
                 <input class='input-1 mb-10' name='title' value='{{old("title")}}' required placeholder='File Title'/>
             </div>
 
@@ -30,9 +30,8 @@
                 </div>
             @endif
 
-            <button class='btn btn-center label-2 bold shadow-1'>SUBMIT</button>
+            <input type='submit' class='btn btn-center label-2 bold shadow-1 prevent-multiple-submit' value='SUBMIT'></input>
         </form>
-
 
     </div>
 @endsection

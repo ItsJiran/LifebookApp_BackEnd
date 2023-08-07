@@ -11,7 +11,25 @@
                 <a href='/create/journals'> <img class='filter-yellow-1' src='/public/library/iconsax/bold/add-square.svg' /> </a>
             </div>
             <ul class='journals-list flex-column'>
-                <label class='para-3 dark-blue-4 semibold flex-center' style='margin:0px auto; margin-top:10px;' >End Content</label>
+                @if(count($journals) !== 0)
+                    @foreach( $journals as $journal)
+                        <li class='material-container border-rounded-1 bg-white-1 shadow-1 flex-center'>
+                            <a href='/edit/journals/{{ $journal->id }}' class='material-photo bg-light-blue-1 flex-center flex-justify-center border-rounded-1'>
+                                <img src='/public/library/iconsax/bold/book-1.svg' class='svg-icon filter-blue-3'/>
+                            </a>
+                            <div class='material-info dark-blue-2'>
+                                <div>
+                                    <a href='/edit/journals/{{ $journal->id }}'><h2 class='para-3 dark-blue-2 semibold' >{{ $journal->title }}</h2></a>
+                                    <p class='para-6'>{{ $journal->date }}</p>
+                                </div>
+                                <a href='/edit/journals/{{ $journal->id }}'><img src='/public/library/iconsax/bold/book-1.svg' class='svg-icon filter-blue-3' src='/delete/journals/{{$journal->id}}'/></a>
+                            </div>
+                        </li>
+                    @endforeach
+                    <label class='para-3 dark-blue-4 semibold flex-center' style='margin:0px auto; margin-top:10px;' >End Content</label>
+                @else
+                    <label class='input-label-1 bg-light-blue-1 label-4 semibold text-center mb-15'>Kosong</label>
+                @endif
             </ul>
         </div>
     </div>

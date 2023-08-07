@@ -1,3 +1,25 @@
+<!DOCTYPE html>
+<!--
+Copyright 2012 Mozilla Foundation
+
+Licensed under the Apache License, Version 2.0 (the "License");
+you may not use this file except in compliance with the License.
+You may obtain a copy of the License at
+
+    http://www.apache.org/licenses/LICENSE-2.0
+
+Unless required by applicable law or agreed to in writing, software
+distributed under the License is distributed on an "AS IS" BASIS,
+WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+See the License for the specific language governing permissions and
+limitations under the License.
+
+Adobe CMap resources are covered by their own copyright but the same license:
+
+    Copyright 1990-2015 Adobe Systems Incorporated.
+
+See https://github.com/adobe-type-tools/cmap-resources
+-->
 <html dir="ltr" mozdisallowselectionprint>
   <head>
     <meta charset="utf-8">
@@ -9,9 +31,10 @@
     <meta id='file-title' name='file-title' content='{{ $material->title }}'/>
     <meta id='file-path' name='file-path' content='{{ $material->path }}'/>
 
-    <link rel="stylesheet" href="/public/library/pdfjs/web/viewer.css">
+
     <link rel="resource" type="application/l10n" href="/public/library/pdfjs/web/locale/locale.properties">
     <script src="/public/library/pdfjs/web/pdf.viewer.js"></script>
+    <link rel="stylesheet" href="/public/library/pdfjs/web/viewer.css">
   </head>
 
   <body tabindex="1" class="loadingInProgress">

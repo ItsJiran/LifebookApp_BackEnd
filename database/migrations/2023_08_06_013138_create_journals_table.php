@@ -11,8 +11,13 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('journal', function (Blueprint $table) {
+        Schema::create('journals', function (Blueprint $table) {
             $table->id();
+            $table->bigInteger('user_id');
+            $table->string('title')->default('Untitled');
+            $table->date('date');
+            $table->time('time');
+            $table->longText('data')->default('{}');
             $table->timestamps();
         });
     }

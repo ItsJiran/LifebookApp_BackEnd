@@ -5,16 +5,15 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class Journals extends Model
+class ApiToken extends Model
 {
     use HasFactory;
 
     protected $fillable = [
         'user_id',
-        'title',
-        'date',
-        'time',
-        'data',
+        'token',
+        'last_at',
+        'expired_at',
     ];
 
 

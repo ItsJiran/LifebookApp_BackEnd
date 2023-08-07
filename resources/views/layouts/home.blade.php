@@ -24,11 +24,11 @@
         </div>
         <label class='para-6 regular blue-2'>Journal</label>
     </a>
-    <a href='/settings' class='nav-menu'>
+    <a href='javascript:confirmSwitchPage("/logout")' class='nav-menu'>
         <div class='icon-container'>
-        <img class='svg-icon filter-blue-2' src='/public/library/iconsax/outline/setting-2.svg'/>
+        <img class='svg-icon filter-blue-2' src='/public/library/iconsax/outline/logout.svg'/>
         </div>
-        <label class='para-6 regular blue-2'>Settings</label>
+        <label class='para-6 regular blue-2'>Logout</label>
     </a>
 @endsection
 

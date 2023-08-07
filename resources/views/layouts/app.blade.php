@@ -9,8 +9,9 @@
 
         <link rel='stylesheet' type='text/css' href='/public/assets/css/reset.css'/>
         <link rel='stylesheet' type='text/css' href='/public/assets/css/style.css?v={{ time() }}'/>
+        <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.0/jquery.min.js'></script>
 
-        <meta name='csrf-token' content=''/>
+        <meta id='csrf-token' name='csrf-token' content='{{ csrf_token() }}'/>
         @yield('head-content')
     </head>
     <body class='home-page'>
@@ -26,7 +27,8 @@
             </div>
         </div>
 
-
         @yield('footer-script-content')
+        <script src='/public/assets/js/script.functions.js?v={{ time() }}'></script>
+        <script src='/public/assets/js/script.js?v={{ time() }}'></script>
     </body>
 </html>

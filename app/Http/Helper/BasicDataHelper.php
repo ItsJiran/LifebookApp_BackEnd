@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 
 use App\Models\User;
 use App\Models\Materials;
+use App\Models\Journals;
 
 class BasicDataHelper{
     public static function getUserData(Request $request){
@@ -23,5 +24,8 @@ class BasicDataHelper{
             $material->date = explode(' ', $material->date)[0];
 
         return $materials;
+    }
+    public static function getJournalsData(Request $request){
+        return Journals::where('user_id',$request->session()->get('user_id'))->orderBy('date','desc')->orderBy('time','desc')->get();
     }
 }

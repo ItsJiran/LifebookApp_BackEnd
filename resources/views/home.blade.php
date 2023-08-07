@@ -14,7 +14,7 @@
                 @endif
             </div>
             <ul class='materials-list flex-column'>
-                @if($materials)
+                @if(count($materials) !== 0)
                     @foreach( $materials as $material)
                         <li class='material-container border-rounded-1 bg-white-1 shadow-1 flex-center'>
                             <a target='_blank' href='/view/materials/{{ $material->id }}' class='material-photo bg-light-blue-1 flex-center flex-justify-center border-rounded-1'>
@@ -25,10 +25,12 @@
                                 <p class='para-6'>{{ $material->date }}</p>
                             </div>
                         </li>
-                    @endforeach
+                        @endforeach
+                    <label class='para-3 dark-blue-4 semibold flex-center' style='margin:0px auto; margin-top:10px;' >End Content</label>
+                @else
+                    <label class='input-label-1 bg-light-blue-1 label-4 semibold text-center mb-15'>Kosong</label>
                 @endif
 
-                <label class='para-3 dark-blue-4 semibold flex-center' style='margin:0px auto; margin-top:10px;' >End Content</label>
             </ul>
         </div>
     </div>
