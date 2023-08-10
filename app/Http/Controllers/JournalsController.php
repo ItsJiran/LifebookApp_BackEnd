@@ -12,10 +12,14 @@ use App\Models\Journals;
 class JournalsController extends Controller
 {
 
+    // STORAGE WHERE UPLOADED FILES LOCATED
     public function storage():string{
-        return '/storage/materials';
+        return '/storage/journals';
     }
 
+    // ============================================================================ 
+    // -------------------------- CRUD METHOD -------------------------------------
+    // ============================================================================
     public function post(Request $request){
         $request->validate([
             'title'=> ['required'],
@@ -48,18 +52,6 @@ class JournalsController extends Controller
 
         return response()->json(['success'=>'success','message'=>'Berhasil melakukan perubahan'],200);
     }
-
-    public function create(Request $request){
-        return view('journal_add');
-    }
-    public function edit(Request $request,$id){
-        $journal = Journals::where('id',$id)->first();
-
-        if($journal->user_id !== $request->session()->get('user_id'))
-            return redirect('home');
-
-        return view('journal_edit',compact('journal'));
-    }
     public function delete(Request $request, $id){
         $journal = Journals::where('id',$id)->first();
 
@@ -68,5 +60,20 @@ class JournalsController extends Controller
 
         $journal->delete();
         return redirect('/journal');
+    }
+
+    // ============================================================================ 
+    // ---------------------------- PAGE VIEW -------------------------------------
+    // ============================================================================ 
+    public function create(Request $request){
+        return view('journal_add');
+    }
+    public function edit(Request $request, $id){
+        $journal = Journals::where('id',$id)->first();
+
+        if($journal->user_id !== $request->session()->get('user_id'))
+            return redirect('home');
+
+        return view('journal_edit',compact('journal'));
     }
 }

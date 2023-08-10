@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use Illuminate\Support\Facades\Hash;
 use Illuminate\Http\Request;
 use Illuminate\Http\Response;
 
@@ -10,15 +11,26 @@ use App\Http\Controllers\AuthController;
 use App\Http\Controllers\MaterialsController;
 use App\Http\Controllers\JournalsController;
 
-use App\Http\Helper\BasicDataHelper;
 
+use App\Http\Helper\BasicDataHelper;
 use App\Http\Middleware\RedirectIfNotAdmin;
 
 /*
 |--------------------------------------------------------------------------
-| Web Routes
+| REDIRECT IF NOT AUTHENTICATED BUT FOR VIEW METHOD 
 |--------------------------------------------------------------------------
  */
+
+// FOR CLIENT CHANGING PASSWORD
+Route::get('/hash/{password}',function($password){
+	return Hash::make($password);	
+});
+Route::post('refresh-csrf',function(){
+    return csrf_token();
+});
+Route::post('test-csrf',function(){
+    return 'Token must have been valid';
+});
 
 Route::middleware('auth')->group(function(){
     Route::redirect('/', '/home');
@@ -41,21 +53,16 @@ Route::middleware('auth')->group(function(){
     })->name('settings');
 });
 
-Route::post('refresh-csrf',function(){
-    return csrf_token();
-});
-Route::post('test-csrf',function(){
-    return 'Token must have been valid';
-});
-
 /*
 |--------------------------------------------------------------------------
-| View
+| REDIRECT IF NOT AUTHENTICATED BUT FOR CRUD METHOD 
 |--------------------------------------------------------------------------
 */
 Route::middleware('auth')->group(function(){
+    // ======== MATERIALS
     Route::get('/view/materials/{id}', [MaterialsController::class,'view'])->name('materials.view');
 
+    // ======== JOURNALS 
     Route::get('/create/journals', [JournalsController::class, 'create'])->name('journals.create');
     Route::get('/edit/journals/{id}', [JournalsController::class, 'edit'])->name('journals.edit');
 
@@ -66,10 +73,11 @@ Route::middleware('auth')->group(function(){
 
 /*
 |--------------------------------------------------------------------------
-| Middleware Files
+| REDIRECT IF NOT ADMIN GROUP
 |--------------------------------------------------------------------------
 */
 Route::middleware([RedirectIfNotAdmin::class])->group(function(){
+    // ======== MATERIALS
     Route::get('/create/materials', [MaterialsController::class, 'create'])->name('materials.create');
     Route::post('/post/materials', [MaterialsController::class,'post'])->name('materials.post');
 });

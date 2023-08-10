@@ -16,6 +16,17 @@
         @yield('head-content')
     </head>
     <body class='home-page'>
+
+        <div id='notification-wrapper' class='notification-wrapper'>
+          <div id='notification-container' class='notification-container'>
+            <div class='notification-loading-container'>
+              <label class='blue-2 label-4 semibold'>Loading..</label>
+            </div>
+            <div class='notification-message-container'>
+            </div>
+          </div> 
+        </div>
+
         <div class='layout-wrapper'>
             <div class='layout-main'>
                 @yield('layout-main-header')

@@ -12,10 +12,14 @@ use App\Models\Materials;
 class MaterialsController extends Controller
 {
 
+    // STORAGE WHERE UPLOADED FILES LOCATED
     public function storage():string{
         return '/storage/materials';
     }
 
+    // ============================================================================ 
+    // -------------------------- CRUD METHOD -------------------------------------
+    // ============================================================================
     public function post(Request $request){
         $request->validate([
             'title' => ['required','min:6'],
@@ -33,10 +37,13 @@ class MaterialsController extends Controller
 
         return redirect('home');
     }
+
+    // ============================================================================ 
+    // ---------------------------- PAGE VIEW -------------------------------------
+    // ============================================================================ 
     public function create(Request $request){
         return view('home_add_material');
     }
-
     public function view($id){
         $material = Materials::where('id',$id)->first();
         return view('materials_view',compact('material'));
