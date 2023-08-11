@@ -11,8 +11,7 @@ use App\Http\Controllers\AuthController;
 use App\Http\Controllers\MaterialsController;
 use App\Http\Controllers\JournalsController;
 
-
-use App\Http\Helper\BasicDataHelper;
+use App\Helper\BasicDataHelper;
 use App\Http\Middleware\RedirectIfNotAdmin;
 
 /*
