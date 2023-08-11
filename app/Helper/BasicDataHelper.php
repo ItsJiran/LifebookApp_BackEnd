@@ -9,6 +9,12 @@ use App\Models\Materials;
 use App\Models\Journals;
 
 class BasicDataHelper{
+    public static function getPatching($state){
+        if($state == 'time')
+            return time();
+        if($state == 'version')
+            return env('APP_VERSION',time());
+    }
     public static function getUserData(Request $request){
         $user = User::where('id',$request->session()->get('user_id'))->first();
         return [

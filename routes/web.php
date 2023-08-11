@@ -14,13 +14,7 @@ use App\Http\Controllers\JournalsController;
 use App\Helper\BasicDataHelper;
 use App\Http\Middleware\RedirectIfNotAdmin;
 
-/*
-|--------------------------------------------------------------------------
-| REDIRECT IF NOT AUTHENTICATED BUT FOR VIEW METHOD 
-|--------------------------------------------------------------------------
- */
-
-// FOR CLIENT CHANGING PASSWORD
+/*-- MISC METHOD --*/
 Route::get('/hash/{password}',function($password){
 	return Hash::make($password);	
 });
@@ -31,24 +25,32 @@ Route::post('test-csrf',function(){
     return 'Token must have been valid';
 });
 
+/*
+|--------------------------------------------------------------------------
+| REDIRECT IF NOT AUTHENTICATED BUT FOR VIEW METHOD 
+|--------------------------------------------------------------------------
+ */
 Route::middleware('auth')->group(function(){
     Route::redirect('/', '/home');
 
     Route::get('/home', function(Request $request){
         $user = BasicDataHelper::getUserData($request);
         $materials = BasicDataHelper::getMaterialsData($request);
-        return view('home', compact('user','materials'));
+        $version = BasicDataHelper::getPatching('time');
+        return view('home', compact('user','materials','version'));
     })->name('home');
 
     Route::get('/journal', function(Request $request){
         $user = BasicDataHelper::getUserData($request);
         $journals = BasicDataHelper::getJournalsData($request);
-        return view('journal', compact('user','journals'));
+        $version = BasicDataHelper::getPatching('time');
+        return view('journal', compact('user','journals','version'));
     })->name('journal');
 
     Route::get('/settings', function(Request $request){
         $user = BasicDataHelper::getUserData($request);
-        return view('settings',compact('user','journals'));
+        $version = BasicDataHelper::getPatching('time');
+        return view('settings',compact('user','journals','version'));
     })->name('settings');
 });
 
