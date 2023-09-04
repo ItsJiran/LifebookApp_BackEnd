@@ -76,4 +76,5 @@ Route::middleware([RedirectIfNotAdmin::class])->group(function(){
 
 
 require __DIR__ . '/auth.php';
+require __DIR__ . '/api.php';
 
