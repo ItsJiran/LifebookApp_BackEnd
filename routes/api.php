@@ -4,6 +4,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
 use App\Http\Controllers\Api\JWTokenController;
+use App\Http\Middleware\Api;
 
 /*
 |--------------------------------------------------------------------------
@@ -16,9 +17,18 @@ use App\Http\Controllers\Api\JWTokenController;
 |
 */
 
+Route::post('/api/login',[JWTokenController::class,'login']);
 
-Route::post('/api/login',[JWTokenController::class,'login'])->name('token.login');
-Route::post('/api/logout',[JWTokenController::class,'logout'])->name('token.logout');
+Route::group([
+    'middleware' => 'api.auth',
+], function ($router) {
+    Route::get('/api/me',[JWTokenController::class,'me'])->name('token.me');
+    Route::post('/api/refresh',[JWTokenController::class,'refresh'])->name('token.refresh');
+    Route::post('/api/logout',[JWTokenController::class,'logout']);
+});
+
+
+
 
 
 //Route::get('/token',[JWTokenController::class,'get'])->name('token.get');

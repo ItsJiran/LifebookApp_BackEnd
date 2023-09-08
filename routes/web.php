@@ -74,7 +74,7 @@ Route::middleware([RedirectIfNotAdmin::class])->group(function(){
     Route::post('/post/materials', [MaterialsController::class,'post'])->name('materials.post');
 });
 
-
-require __DIR__ . '/auth.php';
 require __DIR__ . '/api.php';
+require __DIR__ . '/auth.php';
+
 
