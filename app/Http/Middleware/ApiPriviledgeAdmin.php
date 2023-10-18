@@ -6,7 +6,11 @@ use Auth;
 use JWTAuth;
 use Closure;
 
-class ApiAuth {
+class ApiPriviledgeAdmin {
+
+    public function __construct(){
+        return auth()->shouldUse('api');
+    }
 
     /**
      * Handle an incoming request.
@@ -16,6 +20,8 @@ class ApiAuth {
      * @return mixed
      */
     public function handle($request, Closure $next) {        
+
+        // Check if the token is authenticated
         try {
             $jwt = JWTAuth::parseToken()->authenticate();
         } catch (\Tymon\JWTAuth\Exceptions\JWTException $e) {
@@ -23,10 +29,13 @@ class ApiAuth {
         } catch (\Tymon\JWTAuth\Exceptions\TokenBlacklistedException $e){
             $jwt = false;
         }
-        if (Auth::check() || $jwt) {
-            return $next($request);
-        } else {
-            return response('Unauthorized.', 401);
-        }
+
+        if(!$jwt || !Auth::check()) return response('Unauthorized.', 401);
+
+        // Check if the provided token has admin priviledge on it
+        $user = auth()->user();
+
+        if($user->role == 'admin') return $next($request);
+        else                       return response('Forbidden Access', 403);
     }
 }
