@@ -31,7 +31,6 @@ class MaterialsController extends Controller{
             'time' => ['required']
         ]);
 
-        
         try{
         
             if($request->file('files')[0]->getMimeType() !== 'application/pdf'){

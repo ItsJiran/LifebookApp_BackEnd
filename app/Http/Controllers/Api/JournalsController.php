@@ -123,8 +123,7 @@ class JournalsController extends Controller{
                     ['user_id','=',$user->id],
                     ['title','LIKE','%'.$search_query.'%'],
                 ])->get();
-            }
-            
+            }            
 
             return response()->json($query,200);
         } catch(\Exception $e) {
@@ -165,7 +164,7 @@ class JournalsController extends Controller{
 
             Journals::where('id',$request->id)->delete();
 
-            return response()->json(['message'=>'Delete success'],200);
+            return response()->json(['message'=>'Berhasil mendelete data'],200);
 
         } catch(\Exception $e) {
             return response()->json(['errors'=>[$e],'message'=>'Terjadi kesalahan dalam server'],500);
