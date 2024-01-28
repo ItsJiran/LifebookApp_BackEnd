@@ -42,7 +42,7 @@ class RoutinesController extends Controller{
             return response()->json(['message'=>'Rutinitas tidak ditemukan..'],404);
    
          if($routine->user_id !== auth('api')->user()->id) 
-            return response()->json(['e1rrors'=>[$e],'message'=>'Tidak dapat menambah milik orang lain'],403);
+            return response()->json(['message'=>'Tidak dapat menambah milik orang lain'],403);
          
          $target = RoutinesLogs::where([
             ['routines_id','=',$id], 
@@ -76,7 +76,7 @@ class RoutinesController extends Controller{
             return response()->json(['message'=>'Rutinitas tidak ditemukan..'],404);
    
          if($routine->user_id !== auth('api')->user()->id) 
-            return response()->json(['errors'=>[$e],'message'=>'Tidak dapat menambah milik orang lain'],403);
+            return response()->json(['message'=>'Tidak dapat menambah milik orang lain'],403);
 
          if($target !== null){
 
@@ -115,7 +115,7 @@ class RoutinesController extends Controller{
             return response()->json(['message'=>'Rutinitas tidak ditemukan..'],404);
    
          if($routine->user_id !== auth('api')->user()->id) 
-            return response()->json(['errors'=>[$e],'message'=>'Tidak dapat menambah milik orang lain'],403);
+            return response()->json(['message'=>'Tidak dapat menambah milik orang lain'],403);
 
          if($target == null){
 
@@ -166,7 +166,7 @@ class RoutinesController extends Controller{
             return response()->json(['message'=>'Rutinitas tidak ditemukan..'],404);
    
          if($routine->user_id !== auth('api')->user()->id) 
-            return response()->json(['errors'=>[$e],'message'=>'Tidak dapat menambah milik orang lain'],403);
+            return response()->json(['message'=>'Tidak dapat menambah milik orang lain'],403);
 
          if($target !== null){
 
@@ -193,7 +193,7 @@ class RoutinesController extends Controller{
             return response()->json(['message'=>'Rutinitas tidak ditemukan..'],404);
    
          if($routine->user_id !== auth('api')->user()->id) 
-            return response()->json(['errors'=>[$e],'message'=>'Tidak dapat menambah milik orang lain'],403);
+            return response()->json(['message'=>'Tidak dapat menambah milik orang lain'],403);
 
          if($target == null){
 
@@ -233,7 +233,7 @@ class RoutinesController extends Controller{
             return response()->json(['message'=>'Rutinitas tidak ditemukan..'],404);
    
          if($routine->user_id !== auth('api')->user()->id) 
-            return response()->json(['errors'=>[$e],'message'=>'Tidak dapat menambah milik orang lain'],403);
+            return response()->json(['message'=>'Tidak dapat menambah milik orang lain'],403);
 
          if($target == null){
 
@@ -270,7 +270,7 @@ class RoutinesController extends Controller{
             return response()->json(['message'=>'Rutinitas tidak ditemukan..'],404);
 
          if($target->user_id !== auth('api')->user()->id) 
-            return response()->json(['errors'=>[$e],'message'=>'Tidak dapat melihat milik orang lain'],403);
+            return response()->json(['message'=>'Tidak dapat melihat milik orang lain'],403);
 
          $icon = RoutinesIcons::select(['title'])->where('id',$target->icon_id)->first();
          
@@ -303,7 +303,7 @@ class RoutinesController extends Controller{
          $target = Routines::where('id',$id)->first();
          
          if(is_null($target)) return response()->json(['message'=>'Data Not Found'],404);
-         if($target->user_id !== auth('api')->user()->id) return response()->json(['errors'=>[$e],'message'=>'Tidak dapat menghapus milik orang lain'],403);
+         if($target->user_id !== auth('api')->user()->id) return response()->json(['message'=>'Tidak dapat menghapus milik orang lain'],403);
 
          RoutinesLogs::where('routines_id',$id)->delete();
          RoutinesPeriods::where('routines_id',$id)->delete();
