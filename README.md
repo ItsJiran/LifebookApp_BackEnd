@@ -1,4 +1,5 @@
 
+
 ## About LifeBookApp
 LifebookApp is a web application that made by me, the main aim of the app is about daily journaling and habit or routines tracker.. actually this project Was made to support my school curicullum that include about self growth, and this app is like one of medium that the student can choose to use as their self growth tracker..
 
@@ -10,7 +11,11 @@ You can see the application in the following video :
 
 **Disclaimer** : I'm sorry if the code where dirty, this is actually my first time building a WebApp especially a really complex project.
 
+## Screenshots
+![App Screenshot](https://i.ibb.co/W5Vc6SY/Frame-1.png)
+
 ## How To Install
+
 
 #### -- BackEnd Installation
 
