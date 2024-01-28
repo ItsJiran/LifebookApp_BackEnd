@@ -46,6 +46,7 @@ Route::group([
     Route::get('/api/routine/query/{id}/{year}/{month}',[RoutinesController::class, 'queryMonth']);
 
     Route::put('/api/routine/done/{id}/{year}/{month}/{day}',[RoutinesController::class, 'done']);
+    Route::put('/api/routine/undone/{id}/{year}/{month}/{day}',[RoutinesController::class, 'undone']);
     Route::put('/api/routine/remove/{id}/{year}/{month}/{day}',[RoutinesController::class, 'remove']);
     Route::put('/api/routine/plus/{id}/{year}/{month}/{day}',[RoutinesController::class, 'plus']);
     Route::put('/api/routine/minus/{id}/{year}/{month}/{day}',[RoutinesController::class, 'minus']);

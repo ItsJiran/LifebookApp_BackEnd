@@ -222,6 +222,46 @@ class RoutinesController extends Controller{
       }     
    }
 
+   public function undone(Request $request, $id, $year, $month, $day){
+      try{
+         $carbon = Carbon::createFromDate($year, $month, $day);         
+
+         $routine = Routines::where('id',$id)->first();
+         $target = RoutinesLogs::where(['routines_id'=>$id, 'date'=>$carbon->format('Y-m-d')])->first();
+   
+         if( is_null($routine) ) 
+            return response()->json(['message'=>'Rutinitas tidak ditemukan..'],404);
+   
+         if($routine->user_id !== auth('api')->user()->id) 
+            return response()->json(['errors'=>[$e],'message'=>'Tidak dapat menambah milik orang lain'],403);
+
+         if($target == null){
+
+            $new_data = RoutinesLogs::create([
+               'user_id'     => $routine->user_id,
+               'routines_id' => $routine->id,
+               'val' => 0,
+               'date' => $carbon->format('Y-m-d')
+            ]);
+
+            $new_data->save();
+
+         } else {
+            $target->val = 0;
+            $target->save();
+
+            $new_data = $target;            
+         }
+
+         $percentage = $new_data->val / $routine->max_val * 100;
+         $new_data->circle = $percentage * (2 * 40 * 3.14) / 100;  
+
+         return response()->json(['message'=>'berhasil menambahkan data','new_data'=>$new_data],200);
+      } catch(\Exception $e) {
+         return response()->json(['errors'=>[$e],'message'=>'Terjadi kesalahan dalam server'],500);
+      }     
+   }
+
    public function info(Request $request, $id){ 
       try{      
          $target = Routines::where('id',$id)->first();
